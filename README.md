@@ -27,7 +27,7 @@ using RDatasets
 iris = data("datasets", "iris")
 
 # SVM format expects observations in columns and features in rows
-X = array(iris[:, 1:4])'
+X = matrix(iris[:, 1:4])'
 p, n = size(X)
 
 # SVM format expects positive and negative examples to +1/-1
