@@ -2,7 +2,7 @@ module SVM
 
 import StatsBase.predict
 
-export svm, cddual, cddual_shrinking, pegasos, predict
+export svm, cddual, pegasos, predict
 
 type SVMFit
 	w::Vector{Float64}
@@ -33,8 +33,6 @@ end
 include("pegasos.jl")
 
 include("cddual.jl")
-
-include("cddual_shrinking.jl")
 
 include("sparse.jl")
 
