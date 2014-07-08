@@ -91,6 +91,7 @@ function cddual_shrinking(X::Matrix,
 					w[j] = w[j] + (alpha[i] - alphabar) * Y[i] * X[j, i]
 				end
 			end
+		end
 
 		if abs(M-m) < error
 			if A == 1:l
@@ -113,9 +114,6 @@ function cddual_shrinking(X::Matrix,
 		else
 			m_bar = m
 		end
-		
-		end
 	end
-
 	return SVMFit(w, pass, converged)
 end
