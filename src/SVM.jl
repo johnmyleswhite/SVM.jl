@@ -39,8 +39,8 @@ function svm{T<:Real}(X::AbstractMatrix{T},
                       Y::AbstractVector{T};
                       k::Integer = 5,
                       lambda::Real = 0.1,
-                      T::Integer = 100)
-    pegasos(X, Y, k = k, lambda = lambda, T = T)
+                      maxpasses::Integer = 100)
+    pegasos(X, Y, k = k, lambda = lambda, maxpasses = maxpasses)
 end
 
 end # module

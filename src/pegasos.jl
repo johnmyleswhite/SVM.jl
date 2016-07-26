@@ -7,7 +7,7 @@ function pegasos{T<:Real}(X::AbstractMatrix{T},
                           Y::AbstractVector{T};
                           k::Integer = 5,
                           lambda::Real = 0.1,
-                          T::Integer = 100)
+                          maxpasses::Integer = 100)
     # p features, n observations
     p, n = size(X)
 
@@ -24,7 +24,7 @@ function pegasos{T<:Real}(X::AbstractMatrix{T},
     w_tmp = Array{Float64,1}(p)
 
     # Loop
-    for t in 1:T
+    for t in 1:maxpasses
         # Calculate stepsize parameters
         alpha = 1.0 / t
         eta_t = 1.0 / (lambda * t)
@@ -65,5 +65,5 @@ function pegasos{T<:Real}(X::AbstractMatrix{T},
         end
     end
 
-    return SVMFit(w, T, true)
+    return SVMFit(w, maxpasses, true)
 end
