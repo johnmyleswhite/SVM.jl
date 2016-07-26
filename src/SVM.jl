@@ -33,7 +33,6 @@ end
 
 include("pegasos.jl")
 include("cddual.jl")
-include("sparse.jl")
 
 function svm{T<:Real}(X::AbstractMatrix{T},
                       Y::AbstractVector{T};
